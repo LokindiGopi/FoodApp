@@ -30,8 +30,9 @@ export default function Search({ foodData, setFoodData }) {
   }, [query]);
 
   return (
-    <div className="my-[20px] mx-auto w-[300px] relative   shadow-lg shadow-slate-500 ">
-      <input className="pl-[10px] m-2 outline-none font-serif text-gray-600 text-2xl"
+    <div className="my-4 mx-auto w-full max-w-sm relative shadow-lg shadow-slate-500">
+      <input
+        className="pl-3 py-2 m-2 outline-none font-serif text-gray-600 text-lg sm:text-xl"
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}

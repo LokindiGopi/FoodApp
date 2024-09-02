@@ -19,14 +19,14 @@ export default function FoodDetails({ foodId }) {
   console.log(food);
 
   return (
-    <div>
-      <div className="max-w-[600px] shadow shadow-slate-300 rounded m-2 p-6 font-serif text-[20px] text-">
-        <strong className="text-[24px] mb-[10px]">{food.title}</strong>
+    <div >
+      <div className="max-w-[600px] w-full shadow-lg shadow-slate-300 rounded-lg m-2 p-6 font-serif text-base sm:text-lg">
+        <strong className="text-2xl mb-2 block">{food.title}</strong>
         <img
           className="max-w-full h-auto rounded mb-2.5"
           src={food.image}
         ></img>
-        <div className="mb-[20px] flex justify-between items-center">
+        <div className="mb-4 flex flex-wrap justify-between items-center gap-2">
           <span>
             <strong>⏱️{food.readyInMinutes} Minutes</strong>
           </span>
@@ -42,25 +42,25 @@ export default function FoodDetails({ foodId }) {
             <strong>{food.vegan ? "🐄 vegan" : ""}</strong>
           </span>
         </div>
-        <div>
+        <div className="mb-4">
           <span>
             <strong>$ {food.pricePerServing / 100} Per Serving</strong>
           </span>
         </div>
         <div>
           <br></br>
-          <strong>Ingredients</strong>
+          <strong className="block mb-2">Ingredients</strong>
           <ItemList food={food} isLoading={isLoading}></ItemList>
 
-          <strong>Instructions</strong>
-          <hr></hr>
-          <div className="p-0 rounded text-gray-400">
-            <ul className="ml-0 list-disc pl-[30px]">
+          <strong className="block mt-4 mb-2">Instructions</strong>
+          <hr className="mb-2"></hr>
+          <div className="p-0 rounded text-gray-700">
+            <ul className="ml-0 list-disc pl-6">
               {isLoading ? (
                 <p>Loading....</p>
               ) : (
                 food.analyzedInstructions[0].steps.map((step) => (
-                  <li key={step.id} className="my-[10px] ">
+                  <li key={step.id} className="my-2">
                     {step.step}
                   </li>
                 ))

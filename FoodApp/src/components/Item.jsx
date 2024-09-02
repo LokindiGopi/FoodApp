@@ -1,10 +1,10 @@
 export default function Item({ item }) {
   return (
     <div>
-      <div className="flex p-[10px] mt-[50px] mb-[40px] shadow shadow-slate-300 rounded">
-        <div className="h-full rounded-[10px]">
+      <div className="flex flex-col md:flex-row p-4 mt-8 mb-6 shadow-md shadow-slate-300 rounded-lg">
+        <div className="w-full md:w-1/3 lg:w-1/4 h-auto rounded-lg overflow-hidden">
           <img
-            className="max-w-full h-auto rounded-[10px]"
+            className="w-full h-auto rounded-lg"
             src={
               `https://img.spoonacular.com/ingredients_100x100/` + item.image
             }
@@ -12,9 +12,9 @@ export default function Item({ item }) {
           ></img>
         </div>
 
-        <div className="ml-[50px]">
+        <div className="mt-4 md:mt-0 md:ml-6 flex-1">
           <div className="text-lg font-bold">{item.name}</div>
-          <div className="font-bold mt-[10px]">
+          <div className="font-bold mt-2">
             {item.amount} {item.unit}
           </div>
         </div>
